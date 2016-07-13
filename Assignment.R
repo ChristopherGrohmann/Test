@@ -43,7 +43,7 @@ xtabs(onlinedata$n ~ onlinedata$Ad_seen + onlinedata$Firm_ad)
 xtabs(onlinedata$Sale ~ onlinedata$Ad_seen + onlinedata$Firm_ad)
 xtabs(onlinedata$Sale ~ onlinedata$Ad_seen + onlinedata$Firm_ad)/xtabs(onlinedata$n ~ onlinedata$Ad_seen + onlinedata$Firm_ad)
 
-model2 <- glm(Sale ~ Flyer_region + Ad_seen + Firm_ad + Ad_seen*Firm_ad, data=onlinedata, family=binomial)
+model2 <- glm(Sale ~ Flyer_region + Ad_seen + Firm_ad + Ad_seen*Firm_ad, data=onlinedata, family= binomial(link = "probit"))
 summary(model2)
 
 #6. For the people who did see the display ad, some only where exposed once,
