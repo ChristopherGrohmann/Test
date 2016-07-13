@@ -61,6 +61,6 @@ summary(model4)
 #Is the finding in line with what you would expect and what are the consequences of this? 
 #(hint: extent the logistic regression model)
 
-model5 <- glm(Sale ~ Flyer_region + Firm_ad + Flyer_region*Firm_ad +factor(frim_amount)+ Existing_customer, data=onlinedata, family=binomial)
+model5 <- glm(Sale ~ Flyer_region + Firm_ad + Flyer_region*Firm_ad +factor(frim_amount)+ Existing_customer, data=onlinedata, family=binomial(link = "probit"))
 summary(model5)
 
