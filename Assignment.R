@@ -46,10 +46,6 @@ xtabs(onlinedata$Sale ~ onlinedata$Ad_seen + onlinedata$Firm_ad)/xtabs(onlinedat
 model2 <- glm(Sale ~ Flyer_region + Ad_seen + Firm_ad + Ad_seen*Firm_ad, data=onlinedata, family= binomial(link = "probit"))
 summary(model2)
 
-#6. For the people who did see the display ad, some only where exposed once,
-#while others were exposed multiple times. Does the frequency of exposure 
-#increase the likelihood of conversion? Is the second exposure equally valuable 
-#as the first exposure? Please explain. (hint: use a logistic regression model for this)
 
 onlinedata$frim_amount = onlinedata$Firm_ad * onlinedata$Amount_ads
 model3 <- glm(Sale ~  Flyer_region + Ad_seen + Firm_ad + factor(Amount_ads) * Firm_ad, data=onlinedata, family=binomial)
